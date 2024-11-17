@@ -85,5 +85,15 @@ addBtn.addEventListener("click", function (e) {
 
 });
 
-//
+//Search Function
+//check if a book title is available
+//steps:
+//1. Iterate through our list of books
+//2. Action to perform when there is a match/no match or not
+//3. Colect the input search value and compare with 
 
+//Selecting the input of search from the HTML
+let searchBox = document.getElementById('searchBooks');
+searchBox.addEventListener('keyup', function (e) {  //keyup is what is used to start searching when something is typed into the input text, as we have submit or click events too available to buttons 
+    let searchTerm = e.target.value.toLowerCase(); //this is to convert whatever input the user types, irrespective of the case used, to lower casing in order to compare with our list of books
+})
