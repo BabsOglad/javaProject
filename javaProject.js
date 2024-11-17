@@ -96,4 +96,24 @@ addBtn.addEventListener("click", function (e) {
 let searchBox = document.getElementById('searchBooks');
 searchBox.addEventListener('keyup', function (e) {  //keyup is what is used to start searching when something is typed into the input text, as we have submit or click events too available to buttons 
     let searchTerm = e.target.value.toLowerCase(); //this is to convert whatever input the user types, irrespective of the case used, to lower casing in order to compare with our list of books
+
+    //Selecting the title
+    let books = parent.getElementsByTagName('li');
+    Array.from(books).forEach((book)=>{
+       let title = book.firstElementChild.textContent;
+
+       //Comparing the search term and the titles
+       //when -1 is returned, it means the search term does not exist.
+       //!= -1 means the search term does exist inside the title.
+       if(title.toLowerCase().indexOf(searchTerm) != -1){
+        book.style.display = "block";
+       }else{
+        book.style.display = "none";
+
+       }
+
+    } )
+
+
+
 })
